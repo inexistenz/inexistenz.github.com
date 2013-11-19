@@ -1,0 +1,9 @@
+### vim ignore
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache
