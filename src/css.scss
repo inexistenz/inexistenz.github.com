@@ -85,21 +85,42 @@ header {
   color: #e5e5e5;
   article {
     margin-left: $block-width * 2;
+    margin-bottom: 30px; 
     border-left: 15px #fff solid;
     background: rgba(0,0,0,0.9);
+    section{
+      padding:10px;
+    }
     .description {
-      padding: 10px;
       h1 {
         /* margin-left: -10px; */
         margin-bottom: 10px;
         font-size: 3em;
       }
       p {
+        margin-left: 10px;
         line-height: 1.5em;
       }
     }
     .skills {
-      h3
+      height: 1.4em;
+      color: #7f7f7f;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      h3 {
+        width: $block-width;
+        font-weight: bold;
+        float: left;
+        font-size: 1.4em;
+      }
+
+      ul {
+        list-style: none;
+        li {
+          float: left;
+          width: $block-width;
+        }
+      }
     }
   }
 }
