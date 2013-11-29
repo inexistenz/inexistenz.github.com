@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
+body {
+  font-family: arial, sans-serif;
+  background: url("img/bg1366x768.png") fixed no-repeat; }
+
+header {
+  height: 130px;
+  width: 100%;
+  color: #cccccc;
+  opacity: 0.9; }
+  header #main-nav {
+    height: 96px;
+    background-color: black;
+    width: 100%;
+    line-height: 56px; }
+    header #main-nav #title {
+      float: left;
+      font-size: 3em;
+      width: 470px;
+      padding: 20px; }
+    header #main-nav ul {
+      list-style: none;
+      padding: 20px; }
+      header #main-nav ul li {
+        float: left;
+        font-size: 2em;
+        width: 170px; }
+
+#about-container {
+  color: #e5e5e5;
+  width: 100%; }
+  #about-container article {
+    width: 1020px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.9); }
+    #about-container article section {
+      padding: 30px; }
+      #about-container article section h1 {
+        margin-left: -10px;
+        margin-bottom: 20px;
+        font-size: 3em; }
+      #about-container article section p {
+        margin-top: 2em;
+        line-height: 1.5em; }
+      #about-container article section ul {
+        line-height: 1.5em;
+        list-style: none; }
+
+#job-container {
+  color: #e5e5e5; }
+  #job-container article {
+    margin-left: 340px;
+    margin-bottom: 30px;
+    border-left: 15px #fff solid;
+    background: rgba(0, 0, 0, 0.9); }
+    #job-container article section {
+      padding: 10px; }
+    #job-container article .description h1 {
+      /* margin-left: -10px; */
+      margin-bottom: 10px;
+      font-size: 3em; }
+    #job-container article .description p {
+      margin-left: 10px;
+      line-height: 1.5em; }
+    #job-container article .skills {
+      height: 1.4em;
+      color: #7f7f7f;
+      font-size: 1.4em;
+      line-height: 1.4em; }
+      #job-container article .skills h3 {
+        width: 170px;
+        font-weight: bold;
+        float: left;
+        font-size: 1.4em; }
+      #job-container article .skills ul {
+        list-style: none; }
+        #job-container article .skills ul li {
+          float: left;
+          width: 170px; }
