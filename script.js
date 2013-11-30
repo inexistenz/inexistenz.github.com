@@ -1,5 +1,5 @@
-var userDataUrl = "https://api.github.com/users/inexistenz?callback=userDataCb"; 
-var repoUrl = "https://api.github.com/users/inexistenz/repos?callback=repoDataCb"; 
+var userDataUrl = "https://api.github.com/users/inexistenz?callback=userDataCb";
+var repoUrl = "https://api.github.com/users/inexistenz/repos?callback=repoDataCb";
 
 var gitData = {};
 
@@ -13,7 +13,7 @@ var getUserData = function () {
 var getRepoData = function () {
   var s = document.createElement('script');
   s.type = "text/javascript";
-  s.src = repoUrl; 
+  s.src = repoUrl;
   document.body.appendChild(s);
 };
 
@@ -30,8 +30,8 @@ var repoDataCb = function(response) {
    gitData.repo = {};
    gitData.repo.meta = response.meta;
    gitData.repo.data = response.data;
-   gitData.repo.data.forEach(function(repo){ 
-       if(repo.name != "inexistenz.github.com") {
+   gitData.repo.data.forEach(function(repo){
+       if(repo.name != "inexistenz.github.io" && repo.name != "vim" && repo.name != "gitignore") {
            var html = '<li><a href="' + repo.html_url + '">' + repo.name + '</a></li>';
            $(".repos").append(html);
        }
