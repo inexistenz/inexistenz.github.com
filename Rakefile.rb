@@ -1,32 +1,23 @@
-desc "Parse haml"
-task :parse_haml do
-  puts "Parsing .haml"
-  system(%{
-    cd src/ &&
-    for f in *.haml; do [ -e $f ] && haml $f ../${f%.haml}.html; done
-  })
-  puts "Done parsing haml"
+require 'rake/clean'
+
+CLEAN.include(['*.html','*.css'])
+
+HAML = FileList['src/*.haml']
+HTML = HAML.pathmap("%{src/}X.html")
+SCSS = FileList['src/*.scss']
+CSS = SCSS.pathmap("%{src/}X.css")
+
+rule( /\.html$/ => [
+  proc {|tn| tn.sub(/\.html$/, '.haml').sub(/^/,'src/') }
+]) do |t|
+  sh "haml #{t.source} #{t.name}"
 end
 
-desc "Parse scss"
-task :parse_scss do
-  puts "Parsing .scss"
-  system(%{
-    cd src/ &&
-    for f in *.scss; do [ -e $f ] && sass $f ../${f%.scss}.css; done
-  })
-  puts "Done parsing scss."
+rule( /\.css$/ => [
+  proc {|tn| tn.sub(/\.css$/, '.scss').sub(/^/,'src/') }
+]) do |t|
+  sh "sass #{t.source} #{t.name}"
 end
 
 desc "Build page and css"
-task :default do
-  Rake::Task[:parse_haml].invoke
-  Rake::Task[:parse_scss].invoke
-end
-
-desc "Clean"
-task :clean do
-  puts "Cleaning..."
-  system(%{rm -f *.html *.css})
-  puts "Done cleaning"
-end
+task :default => HTML + CSS
